@@ -122,7 +122,9 @@ STEP-5: Display the obtained cipher text.
 
 ## OUTPUT:
 Enter the plain text: good morning
+
 Enter the keyword: wir
+
 Cipher text: CTPCHSBLBKEZ
 ## RESULT:
   Thus the Playfair cipher substitution technique had been implemented successfully.
