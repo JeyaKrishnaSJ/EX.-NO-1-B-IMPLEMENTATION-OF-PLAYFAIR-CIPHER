@@ -25,7 +25,6 @@ STEP-5: Display the obtained cipher text.
     void findPosition(char matrix[5][5], char letter, int *row, int *col);
     void encryptPair(char matrix[5][5], char a, char b, char *c1, char *c2);
     void encryptText(char text[], char key[], char cipher[]);
-
     int main() {
     char text[100], key[25], cipher[100];
     printf("Enter the plain text: ");
@@ -48,7 +47,6 @@ STEP-5: Display the obtained cipher text.
             idx++;
         }
     }
-
     for(i = 0; i < 26; i++) {
         if (!flag[i] && (alphabet + i) != 'J') {
             matrix[idx / 5][idx % 5] = alphabet + i;
@@ -83,10 +81,8 @@ STEP-5: Display the obtained cipher text.
     }
     void encryptPair(char matrix[5][5], char a, char b, char *c1, char *c2) {
     int r1, c1_pos, r2, c2_pos;
-
     findPosition(matrix, a, &r1, &c1_pos);
     findPosition(matrix, b, &r2, &c2_pos);
-
     if (r1 == r2) {
         *c1 = matrix[r1][(c1_pos + 1) % 5];
         *c2 = matrix[r2][(c2_pos + 1) % 5];
@@ -98,14 +94,11 @@ STEP-5: Display the obtained cipher text.
         *c2 = matrix[r2][c1_pos];
     }
     }
-
     void encryptText(char text[], char key[], char cipher[]) {
     char matrix[5][5], bigram[2];
     int i, j = 0, k = 0;
-
     prepareText(text);
     prepareMatrix(key, matrix);
-
     for(i = 0; i < strlen(text); i += 2) {
         bigram[0] = text[i];
         if (i + 1 < strlen(text)) {
@@ -118,13 +111,8 @@ STEP-5: Display the obtained cipher text.
     }
     cipher[j] = '\0';
   }
-
-
 ## OUTPUT:
-Enter the plain text: good morning
+![pf](https://github.com/user-attachments/assets/d2c0fc0d-da3d-47db-8dd4-720f34db3ab4)
 
-Enter the keyword: wir
-
-Cipher text: CTPCHSBLBKEZ
 ## RESULT:
   Thus the Playfair cipher substitution technique had been implemented successfully.
